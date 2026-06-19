@@ -19,10 +19,10 @@ jobs:
           sast-scan: true
           debricked-sca-scan: true # For FoD, run an open-source scan as part of the SAST scan (ignored if SAST scan is disabled).
         env:
-          FOD_URL: ${vars.FOD_URL}  # Must be hardcoded or configured through GitHub variable, not secret
+          FOD_URL: ${{ vars.FOD_URL }}  # Must be hardcoded or configured through GitHub variable, not secret
           # Either tenant/user/password or client id/secret are required
-          FOD_CLIENT_ID: ${{secrets.FOD_CLIENT_ID}}
-          FOD_CLIENT_SECRET: ${{secrets.FOD_CLIENT_SECRET}}
+          FOD_CLIENT_ID: ${{ secrets.FOD_CLIENT_ID }}
+          FOD_CLIENT_SECRET: ${{ secrets.FOD_CLIENT_SECRET }}
           # FOD_TENANT: ${{secrets.FOD_TENANT}}
           # FOD_USER: ${{secrets.FOD_USER}}
           # FOD_PASSWORD: ${{secrets.FOD_PAT}}
